@@ -9,4 +9,12 @@ const LOGIN_USER = gql`
   }
 `;
 
-export { LOGIN_USER };
+const VERIFY_USER = gql`
+  mutation VerifyUser($token: String!) {
+    verifyUser(token: $token) {
+      loggedIn
+    }
+  }
+`;
+
+export { LOGIN_USER, VERIFY_USER };

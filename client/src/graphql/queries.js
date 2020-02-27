@@ -9,4 +9,10 @@ const FETCH_PRODUCTS = gql`
   }
 `;
 
-export { FETCH_PRODUCTS };
+const IS_LOGGED_IN = gql`
+    query IsUserLoggedIn {
+      isLoggedIn @client
+    }
+`
+
+export { FETCH_PRODUCTS, IS_LOGGED_IN };
