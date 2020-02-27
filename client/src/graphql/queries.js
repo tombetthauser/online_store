@@ -5,6 +5,7 @@ const FETCH_PRODUCTS = gql`
     products {
       _id
       name
+      description
     }
   }
 `;

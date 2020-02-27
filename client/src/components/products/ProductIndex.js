@@ -1,6 +1,7 @@
 import React from "react";
 import { Query } from "react-apollo";
 import { FETCH_PRODUCTS } from "../../graphql/queries";
+import { Link } from "react-router-dom";
 
 
 class ProductIndex extends React.Component {
@@ -15,7 +16,13 @@ class ProductIndex extends React.Component {
                 return (
                 <ul>
                     {data.products.map(product => (
-                    <li key={product._id}>{product.name}</li>
+                    <Link to={`/${product._id}`}>
+                        <li key={product._id}>
+                            {product.name}
+                            <br/>
+                            {product.description}
+                        </li>
+                    </Link>
                     ))}
                 </ul>
                 );

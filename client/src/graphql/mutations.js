@@ -17,4 +17,13 @@ const VERIFY_USER = gql`
   }
 `;
 
-export { LOGIN_USER, VERIFY_USER };
+const REGISTER_USER = gql`
+  mutation RegisterUser($name: String, $email: String, $password: String) {
+    register(name: $name, email: $email, password: $password) {
+      token
+      loggedIn
+    }
+  }
+`;
+
+export { LOGIN_USER, VERIFY_USER, REGISTER_USER };
